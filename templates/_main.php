@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title><?=$seo?></title>
     <meta name="Description" content="<?= page()->seo != '' ? page()->seo->summary : ''?>">
-    <link rel="icon" href="<?=$options->img_2->url?>"/>
+    <link rel="icon" href="<?=$options->img_2 ? $options->img_2->url : ''?>"/>
     <link rel="stylesheet" type="text/css" href="<?php echo urls()->templates?>all-assets/css/<?php echo $css?>.css" />
     <!-- <link rel="stylesheet" href="<?php // echo urls()->templates?>all-assets/css/custom.css"/> -->
     <?php
