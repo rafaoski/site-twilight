@@ -31,6 +31,7 @@
 
 <?=page()->body?>
 
+<?php if(count(page()->rep_1)): ?>
 <h1><i class="fa fa-users" aria-hidden="true"></i> <?=__('Show My Team');?></h1>
 
 <div class="content-team grid-4_md-2_sm-1-spaceBetween">
@@ -84,6 +85,8 @@ $team = page()->rep_1;
 <?php endforeach; ?>
 
 </div><!-- /.content-team -->
+<?php // END => if(count(page()->rep_1)) 
+      endif; ?>
 
 <?php $children = page()->children("limit=2");
 if(count($children )) : ?>
