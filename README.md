@@ -41,3 +41,11 @@ gulp watch
 
 #### To Minify CSS Use This Command:
 gulp finish
+
+#### To remove DEMO DATA go to _main.php and uncomment it with:
+// trashDemoData($trash = true);  
+TO
+trashDemoData($trash = true);
+##### And go to your home page and refresh it ... Your Demo Sites should be in the trash ...
+##### Finally, remove or comment this feature back: 
+// trashDemoData($trash = true);
