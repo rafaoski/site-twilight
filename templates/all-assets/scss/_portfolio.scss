@@ -1,0 +1,93 @@
+.toolbar {
+    margin: 1rem;
+    .btn {
+        font-family: Lato;
+        font-size: 1rem;
+        font-weight: normal;
+        text-decoration: none;
+        cursor: pointer;
+        display: inline-block;
+        line-height: normal;
+        padding: .5rem 1rem;
+        margin: .2rem;
+        height: auto;
+        border: 1px solid;
+        vertical-align: middle;
+        -webkit-appearance: none;
+        color: $c_form_c;
+        background-color: $c_form_b;
+        transition: $t-out;
+        &:hover {
+          color: $c_f_inp_c;
+        }
+          
+    }
+}
+
+#portfolio {
+    // display: flex;
+    // flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+    -webkit-column-count: 3; 
+    -moz-column-count: 3;
+    column-count: 3;
+    -webkit-column-gap: 1rem;
+    -moz-column-gap: 1rem;
+    column-gap: 1rem;
+    -webkit-column-width: 33.33333333333333%;
+    -moz-column-width: 33.33333333333333%;
+    column-width: 33.33333333333333%;
+
+.tile { 
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: all 350ms ease;
+    transition: all 500ms ease;
+    display: flex;
+    justify-content: center;
+    h3 {
+        color: $transparent;
+        transition: all 500ms ease;
+        position: absolute;
+        padding: 1em;
+        margin-top: 20%;
+    }
+    &:hover {
+     h3 {
+         color: $white;
+         background-color: $red;
+     }
+     
+    }
+}
+    img {
+        height: auto;
+        max-width: 100%;
+        margin-bottom: 1rem;
+        transition: $t-out;
+        border: 3px solid $transparent;
+    
+        &:hover {
+            border: 3px solid $white;
+            // transform: scale(0.98);
+          }
+
+    }
+
+.scale-anm {
+  transform: scale(1);
+}
+
+// MEDIA QUERIES tablet MAXIMUM 768px
+@include tablet {
+    margin: .3rem 0;
+    -webkit-column-count: 1; 
+    -moz-column-count: 1;
+    column-count: 1;
+    -webkit-column-width: 100%;
+    -moz-column-width: 100%;
+    column-width: 100%;
+  }
+}

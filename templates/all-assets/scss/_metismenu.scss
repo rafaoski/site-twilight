@@ -1,0 +1,220 @@
+/*
+ * metismenu - v2.7.0
+ * A jQuery menu plugin
+ * https://github.com/onokumus/metismenu#readme
+ *
+ * Made by Osman Nuri Okumus <onokumus@gmail.com> (https://github.com/onokumus)
+ * Under MIT License
+ */
+
+ .metismenu .arrow {
+  float: right;
+  line-height: 1.42857;
+}
+*[dir="rtl"] .metismenu .arrow {
+  float: left;
+}
+
+.metismenu .collapse {
+  display: none;
+}
+.metismenu .collapse.in {
+  display: block;
+}
+.metismenu .collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition-timing-function: ease;
+       -o-transition-timing-function: ease;
+          transition-timing-function: ease;
+  -webkit-transition-duration: .35s;
+       -o-transition-duration: .35s;
+          transition-duration: .35s;
+  -webkit-transition-property: height, visibility;
+  -o-transition-property: height, visibility;
+  transition-property: height, visibility;
+}
+
+.metismenu .has-arrow {
+  position: relative;
+}
+
+.metismenu .has-arrow::after {
+  position: absolute;
+  content: '';
+  width: .5em;
+  height: .5em;
+  border-width: 1px 0 0 1px;
+  border-style: solid;
+  border-color: initial;
+  right: 1rem;
+  color: $white;
+
+  -webkit-transform: rotate(-45deg) translate(0, -50%);
+      // -ms-transform: rotate(-45deg) translate(0, -50%);
+       -o-transform: rotate(-45deg) translate(0, -50%);
+          transform: rotate(-45deg) translate(0, -50%);
+  -webkit-transform-origin: top;
+      // -ms-transform-origin: top;
+       -o-transform-origin: top;
+          transform-origin: top;
+  top: 50%;
+  -webkit-transition: all .3s ease-out;
+  -o-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+}
+
+*[dir="rtl"] .metismenu .has-arrow::after {
+  right: auto;
+  left: 1em;
+  -webkit-transform: rotate(135deg) translate(0, -50%);
+      // -ms-transform: rotate(135deg) translate(0, -50%);
+       -o-transform: rotate(135deg) translate(0, -50%);
+          transform: rotate(135deg) translate(0, -50%);
+}
+
+.metismenu .active > .has-arrow::after,
+.metismenu .has-arrow[aria-expanded="true"]::after {
+  -webkit-transform: rotate(-135deg) translate(0, -50%);
+      // -ms-transform: rotate(-135deg) translate(0, -50%);
+       -o-transform: rotate(-135deg) translate(0, -50%);
+          transform: rotate(-135deg) translate(0, -50%);
+}
+
+.topbar-nav {
+  background: $nav;
+  .metismenu {
+    .metis-item {
+      display: none;
+    }
+  }
+
+}
+.topbar-nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  background: $nav;
+}
+.topbar-nav .metismenu {
+  display: -webkit-box;
+  // display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      // -ms-flex-direction: column;
+          flex-direction: column;
+// TIGGER MENU            
+  .open-menu {
+    display: block;
+  }
+  justify-content: space-around;
+  .current a {
+    color: $current !important;
+  }
+}
+.topbar-nav .metismenu > li {
+          flex: 110%;
+  display: -webkit-box;
+  // display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      // -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  // align-self: center;
+  // justify-content: space-around;
+
+}
+
+.topbar-nav .metismenu a {
+  position: relative;
+  display: block;
+  padding: 15px;
+  color: $nav-a;
+  outline-width: 0;
+  transition: all .3s ease-out;
+}
+
+
+.topbar-nav .metismenu a:hover,
+.topbar-nav .metismenu a:focus,
+.topbar-nav .metismenu a:active {
+  color: $nav-active;
+  text-decoration: none;
+  background: $act-back;
+}
+
+// DISABLE SUB WITH MOBILE
+.topbar-nav .metismenu > .item:hover > ul,
+.topbar-nav .metismenu > .item:hover > ul.collapse,
+.metismenu > .item .has-arrow::after {
+  // min-width: 160px;
+  // background-color: #efefef;
+  display: none;
+}
+
+@media (min-width: 992px) {
+//  SHOW MENU
+.topbar-nav {
+.metismenu {
+  .metis-item {
+    display: block !important;
+  }
+  // BUTTON TRIGER       
+  .open-menu {
+    display: none;
+  }
+}
+}
+.metismenu .has-arrow::after {
+  right: 1rem;
+}
+  .topbar-nav .metismenu {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          // -ms-flex-direction: row;
+              flex-direction: row;
+
+  }
+  .topbar-nav .metismenu > li {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          // -ms-flex-direction: column;
+              flex-direction: column;
+  }
+  .topbar-nav .metismenu > li > ul {
+      position: absolute;
+      top: 100%;
+      min-width: 100%;
+      z-index: 1001;
+  }
+  .topbar-nav.is-hoverable .metismenu > li > ul {      
+    height: auto !important;
+  }
+  .topbar-nav.is-hoverable .metismenu > li:hover > ul {
+      display: block;
+  }
+  .topbar-nav.is-hoverable .metismenu > li:hover > a.has-arrow:after {
+      -webkit-transform: rotate(-135deg);
+              transform: rotate(-135deg);
+  }
+  .topbar-nav .metismenu > li:hover > ul,
+  .topbar-nav .metismenu > li:hover > ul.collapse,
+  .metismenu > .item .has-arrow::after {
+    // min-width: 160px;
+    // background-color: #efefef;
+    display: block !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .topbar-nav {
+        // MOBILE SCROOL MENU
+      max-height: 500px;
+      width: 100%;
+      overflow-y: scroll;
+  }
+}

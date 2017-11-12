@@ -1,0 +1,19 @@
+// BUTTON DEFAULT
+.btn-out {
+background-color: $transparent;
+color: $b_col;
+border: 1px solid $red;
+padding: .3rem;
+margin: .4rem;
+margin-top: .7rem;
+border-radius: .2rem;
+display: inline-block;
+transition: $t-out;
+    &:hover {
+    background-color: $orange;
+    color: $dark;
+    border: 1px solid $transparent;
+    }
+}
+
+

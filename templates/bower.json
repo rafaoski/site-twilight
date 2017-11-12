@@ -1,0 +1,31 @@
+{
+  "name": "processwire-grid-starter",
+  "description": "Simple Starter Based on Grid CSS",
+  "main": "index.js",
+  "authors": [
+    "Rafał Olszewicz"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "grid",
+    "css",
+    "processwire"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "vanilla-lazyload": "^10.0.1",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.2.1",
+    "cookieconsent": "^3.0.4",
+    "metisMenu": "metismenu#^2.7.0",
+    "headroom.min": "https://unpkg.com/headroom.js/dist/headroom.min.js",
+    "gridlex": "^2.4.1"
+  }
+}

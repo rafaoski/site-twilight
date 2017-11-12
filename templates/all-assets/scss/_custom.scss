@@ -1,0 +1,749 @@
+// ******************** START HEADER GRID, MENU, LOGO
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+.topbar-nav {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      grid-template-areas:
+      'logo metismenu metismenu metismenu metismenu metismenu metismenu';
+    }
+
+.logo {
+    // GRID AREA LOGO ( logo )
+    grid-area: logo;
+    align-self: center;
+    padding: .5rem;
+    img {
+      border: 1px solid $transparent;
+      max-height: 35px;
+      transition: $t-out;
+      &:hover {
+        border: 1px solid $red;
+        transform: scale(0.96);
+      }
+    }
+}
+  .metismenu {
+        // GRID AREA LOGO ( nav )
+        grid-area: metismenu;
+        align-self: center;
+  }
+
+// MEDIA QUERIES tablet MAXIMUM 768px
+  @include tablet {
+    .topbar-nav {
+      grid-template-areas:
+      'logo logo metismenu metismenu metismenu metismenu metismenu';
+    }
+  }
+
+}
+// END HEADER GRID => MENU, LOGO **********************/
+
+// ******************** START CONTENT GRID  ********************/
+.wrapper-g {
+  min-height: 70vh;
+  // width: 80%;
+  display: grid;
+  grid-gap: 100px;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: auto;
+  grid-column-gap: 10px;
+  grid-row-gap: 15px;
+  grid-template-areas:
+  'bread bread bread bread bread bread bread'
+  'content content  content content content sidebar sidebar';
+
+// GRID MEDIA QUERIES desktop MINIMUM 769px AND MAXIMUM 1024px
+@include desktop {
+  display: grid;
+   // grid-gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+  'bread bread bread'
+  'content content content'
+  'sidebar sidebar sidebar';
+}
+
+// GRID MEDIA QUERIES tablet MAXIMUM 768px
+@include tablet {
+      display: grid;
+       // grid-gap: 1rem;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas:
+      'bread bread bread'
+      'content content content'
+      'sidebar sidebar sidebar';
+  }
+
+}
+
+// ******************** BREADCRUMBS ********************/
+.bread {
+  // GRID AREA BREAD ( breadcrumbs )
+  grid-area: bread;
+  margin-bottom: -2rem;
+  margin-top: 3rem;
+  padding: .3rem;
+  ul {
+    display: flex;
+    li {
+      padding: .2rem;
+      list-style: none;
+      .current {
+         color: $orange;
+      }
+    }
+  }
+  @include tablet {
+    margin-bottom: -3rem;
+    ul {
+      justify-content: center;
+      padding: 0;
+    }
+  }
+}
+
+// ******************** CONTENT BODY ********************/
+.content {
+//  GRID AREA CONTENT
+  grid-area: content;
+  padding: 0 2rem;
+
+  .header-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      transition: $t-out;
+      border: 3px solid $transparent;
+      &:hover {
+        border: 3px solid $white;
+        // transform: scale(0.98);
+      }
+    }
+
+  }
+  .page-hedline {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    @include tablet {
+      text-align: center;
+      font-size: 1rem;
+      padding: 1rem;
+      margin-top: .5rem;
+      margin-bottom: .5rem;
+    }
+  }
+
+  // GRID MEDIA QUERIES tablet MAXIMUM 768px
+  @include tablet {
+    padding: 0 .5rem;
+  }
+
+}
+
+// ******************** SIDEBAR ********************/
+.sidebar {
+  // GRID AREA SIDEBAR
+  grid-area: sidebar;
+  padding: 1rem;
+  .search {
+      input {
+        background-color: $gray;
+        color: $s_col;
+        padding: .4rem;
+        border: 1px solid $transparent;
+      }
+    button {
+      padding: .4rem;
+      margin-left: .2rem;
+      background-color: $transparent;
+      border: 1px solid $s_col;
+      color: $s_col;
+      transition: $t-out;
+      &:hover {
+        background-color: $orange;
+        color: $white;
+        i {
+          color: $white;
+        }
+      }
+    }
+  }
+  @include tablet {
+      .search {
+          text-align: center;
+          button {
+            display: none;
+          }
+        }
+    }
+
+}
+
+// END CONTENT GRID  **********************/
+
+// ******************** GRID FRONT TILED GALLERY ********************/
+.tiled-g {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 1rem;
+
+.grid-item {
+  transition: $t-out;
+  border:3px solid $transparent;
+  border-top: $b_top;
+  border-bottom: 3px solid $transparent;
+  padding: .5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+    &:hover {
+      // background-color: $light-dark;
+      transform: scale(0.98);
+      border-top: 3px solid $transparent;
+      border-bottom: $b_top;
+       }
+
+  }
+
+  // FIRST ITEM GALLERY
+  .grid-item:nth-child(1) {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+    // padding: .7rem;
+      // GRID MEDIA QUERIES tablet MAXIMUM 768px
+      @include tablet {
+        grid-column: auto;
+        grid-row: auto;
+      }
+
+  }
+
+    // GRID MEDIA QUERIES tablet MAXIMUM 768px
+    @include tablet {
+      grid-template-columns: 1fr;
+    }
+
+}
+// END FRONT TILED GALLERY **********************/
+
+// BLOG PAGE
+.post-body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  grid-gap: .2rem;
+
+  .content-item {
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $bg-item;
+    border-top: $b_top;
+    .top-list {
+      margin: 0 0 1rem;
+      padding: 0;
+      li {
+        display: inline;
+    }
+    .authors {
+      padding-left: .2rem;
+      padding-right: .2rem;
+    }
+    .com-count {
+      padding-left: .5rem;
+    }
+  }
+    img {
+      border: 3px solid $transparent;
+      transition: $t-out;
+      &:hover {
+        border: 3px solid $white;
+        transform: scale(0.98);
+      }
+    }
+    .cat-tag {
+      margin: 0.5rem 0 0.5rem;
+      padding: 0;
+      li {
+        display: inline;
+      }
+
+      .categories, .tags {
+        padding-left: .2rem;
+        padding-right: .2rem;
+      }
+    }
+    p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+  // GRID MEDIA QUERIES desktop MINIMUM 769px AND MAXIMUM 1024px
+  @include desktop {
+    grid-template-columns: 1fr;
+    .content-item {
+      padding: .5rem;
+    }
+  }
+  // GRID MEDIA QUERIES tablet MAXIMUM 768px
+  @include tablet {
+    grid-template-columns: 1fr;
+    .content-item {
+      display: block;
+      text-align: center;
+      padding: 0.3rem;
+    }
+
+  }
+
+}
+
+// ---- BLOG SINGLE POST ----
+.blog-headline {
+  // LIST CATEGORIES, TAGS
+ .cat-tag {
+   margin: 0 .5rem 1rem;
+   padding: 0;
+   text-align: center;
+   li {
+     display: inline;
+   }
+  .authors, .categories, .tags {
+      padding-left: .2rem;
+      padding-right: .2rem;
+    }
+    .p-date, .all-authors, .all-tags, .all-categories, .com-count {
+      margin-left: .2rem;
+      margin-right: .2rem;
+      padding-left: .2rem;
+    }
+  }
+}
+// SHARE BUTTONS
+.add-to-any {
+  padding-top: .5rem;
+}
+// COMMENT FORM
+#CommentForm_form {
+  label {
+    color: $red;
+    font-family: 'Joti One', sans-serif;
+  }
+  padding: .3rem;
+  border: 1px solid $gray;
+  input, textarea  {
+    background-color: $comm_form;
+    color: $c_color;
+    padding: .3rem;
+    border: none;
+    margin-top: .2rem;
+  }
+  button {
+    background-color: $transparent;
+    color: $c_btn_col;
+    font-family: 'Joti One', sans-serif;
+    border: none;
+    border: 1px solid $c_btn_col;
+    padding: .7rem;
+    margin: .4rem;
+    border-radius: .2rem;
+    transition: $t-out;
+    &:hover {
+    background-color: $orange;
+    color: $dark;
+    border: 1px solid $transparent;
+    }
+  }
+}
+#CommentPostNote {
+  color: $orange;
+  margin-top: .5rem;
+  font-size: 1.5rem;
+  font-family: 'Galindo', sans-serif;
+}
+
+
+// CATEGORY PAGE
+.cotent-cat {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-gap: .5rem;
+  text-align: center;
+  .content-item {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    img {
+      align-self: center;
+      // padding: 1rem;
+      margin-bottom: 1rem;
+      margin-top: -.5rem;
+      background-size: cover;
+      align-items: center;
+    }
+      border: 1px solid $border_cat;
+      transition: $t-out;
+      i {
+        // color: $red;
+        transition: $t-out;
+      }
+      span {
+        color: $a;
+        transition: $t-out;
+      }
+      &:hover {
+        transform: scale(0.93);
+        border:1px solid $gray;
+        span {
+          color: $a-h;
+        }
+        i {
+          color: $orange;
+        }
+      }
+  }
+
+  // GRID MEDIA QUERIES desktop MINIMUM 769px AND MAXIMUM 1024px
+  @include desktop {
+    grid-template-columns: repeat(3, 1fr);
+    .content-item {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  // GRID MEDIA QUERIES tablet MAXIMUM 768px
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+    .content-item {
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid $transparent;
+    }
+  }
+
+}
+
+// TAG PAGE
+.cotent-tag {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .content-item {
+    margin: .6rem;
+      // border: 1px solid $orange;
+      transition: $t-out;
+      i {
+        color: $i;
+        transition: $t-out;
+      }
+      span {
+        color: $a;
+        transition: $t-out;
+      }
+      &:hover {
+        transform: scale(0.93);
+        span {
+          color: $a-h;
+        }
+        i {
+          color: $orange;
+        }
+      }
+  }
+    // GRID MEDIA QUERIES tablet MAXIMUM 768px
+    @include tablet {
+    .content-item {
+      margin: .2rem;
+    }
+  }
+}
+// CONTACT PAGE
+.contact-form {
+  display: grid;
+}
+
+
+// ******************** PREV NEXT PAGE ********************/
+.pr-nxt {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+// ******************** PAGINATION ********************/
+.pagination {
+display: flex;
+justify-content: center;
+ li {
+   padding: .3rem;
+   list-style: none;
+ }
+}
+
+// ******************** CONTENT FOOTER ********************/
+.footer {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: auto;
+  // grid-gap: 1rem;
+  grid-template-areas:
+  'powered powered powered powered social-profile social-profile social-profile social-profile';
+
+  border-top: 1px solid $gray;
+  margin-top: .5rem;
+
+  // GRID AREA POWERED
+  .powered {
+    grid-area: powered;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem;
+    p {
+      color: $f-p;
+    }
+  }
+
+  .social-prof {
+    grid-area: social-profile;
+    margin-top: .5rem;
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        padding: 3rem .5rem;
+      }
+    }
+
+  }
+  @include tablet {
+
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    ul {
+      flex-wrap: wrap;
+      li {
+        padding: .7rem .2rem !important;
+      }
+    }
+
+    .powered {
+          margin-top: -4rem;
+    }
+  }
+
+}
+
+// ******************** PW DEBUG ********************/
+.debug-regions {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  .pw-debug {
+    background-color: $gray;
+    color: $white;
+  }
+
+}
+
+// IF DISABLE SIDEBAR ****************************/
+.wrapper-sid {
+  grid-template-areas:
+  'bread bread bread bread bread bread bread'
+  'content content  content content content content content';
+}
+
+  .footer-search {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-areas:
+  'social-profile powered powered powered search-form search-form';
+
+  .search-form {
+    grid-area: search-form;
+
+    display: flex !important;
+    align-items: center;
+
+      input {
+        background-color: $gray;
+        color: $orange;
+        padding: .4rem;
+        border: 1px solid $transparent;
+      }
+
+    button {
+      padding: .4rem;
+      margin-left: .2rem;
+      background-color: $transparent;
+      border: 1px solid $trans-red;
+      color: $orange;
+      transition: $t-out;
+      &:hover {
+        background-color: $orange;
+        color: $white;
+      }
+    }
+  }
+
+  // GRID AREA POWERED
+  .powered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem;
+  }
+
+// GRID MEDIA QUERIES tablet MAXIMUM 768px
+@include tablet {
+
+  .search-form {
+      padding-top: 1rem;
+      button {
+        display: none;
+      }
+    }
+    .powered {
+          margin-top: -4rem;
+    }
+
+  }
+
+  }
+
+//Scrool To Top
+.scrollup {
+  bottom: 12rem;
+  color: $orange;
+  display: none;
+  /*padding: .5rem  .7rem;*/
+  position: fixed;
+  right: 2em;
+  transition: $t-out;
+  z-index: 1999;
+  &:hover {
+    color: darken($white, 90%);
+  }
+
+}
+
+// ALERTS
+.alert-d {
+  background-color: $last-dark;
+  color: $white;
+  margin: .5rem;
+  padding: .3rem;
+  font-size: 1.5rem;
+  text-align: center;
+// GRID MEDIA QUERIES tablet MAXIMUM 768px
+@include tablet {
+      font-size: 0.7rem;
+    }
+}
+// PORTFOLIO
+// listChild() => LIST CHILD _func.php => line: 341
+.list-c {
+h3 {
+  transition: $t-out;
+  &:hover {
+    color: $orange;
+    i {
+      color: $red;
+    }
+  }
+  i {
+    color: $a;
+  }
+}
+}
+
+.cat-port {
+  list-style-type: none;
+  display: flex;
+  li {
+    padding: .3rem;
+  }
+}
+
+.user-profile {
+  background-color: $c_b;
+  color: $c_color;
+  border: 2px solid $c_border_c;
+  padding: .3rem;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  .body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      border: 3px solid $gray;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+    }
+    p {
+      text-align: center;
+    }
+  }
+
+  .user-info {
+    margin-top: -1.5rem;
+    ul {
+      list-style: none;
+      li {
+        padding: .3rem;
+      }
+    }
+  }
+  
+
+  .social-profile ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    li {
+      margin: .3rem;
+    }
+  }
+}
+// .user-profile {
+//   background-color: $light-dark;
+//   padding: .3rem;
+//   color: $dark-gray;
+//   list-style: none;
+//   display: flex;
+//   justify-content: center;
+//   margin: 0;
+//   padding: 0;
+//   li {
+//       margin: 1rem;
+//   }
+// }

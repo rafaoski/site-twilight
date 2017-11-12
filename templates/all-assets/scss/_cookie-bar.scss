@@ -1,0 +1,36 @@
+#cookie-bar {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    background:$footer;
+    height:auto;
+    line-height:24px;
+    color:$red;
+    padding:1rem 1rem;
+    &.fixed {
+        position:fixed; top:0; left:0; width:100%;
+        &.bottom {bottom:0; top:auto;}
+    }
+    p {margin:0; padding:0;}
+    a {color:$white; display:inline-block; border-radius:3px; text-decoration:none; padding:0 6px; margin-left:8px;}
+    .cb-enable {
+        background:$green-lantern;
+        &:hover {
+            background:lighten($green,10%);
+            color: $dark;
+        }
+    }
+    .cb-disable {
+        background:$blue;
+        &:hover {background:lighten($blue,10%);}
+    }
+
+   .cb-policy {
+       background:$dark-blue;
+       &:hover {
+           background:$blue;
+           color:$dark;
+        }
+   }
+}

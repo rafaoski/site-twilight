@@ -1,0 +1,81 @@
+img {
+  height: auto;
+  max-width: 100%;
+}
+.img-center {
+  display: block;
+  text-align: center;
+}
+body {
+  background-color: $body;
+  color: $body-color;
+  margin: 0 auto;
+
+}
+.container {
+  width: 80%;
+  margin: 0 auto;
+  // MEDIA QUERIES tablet MAXIMUM 768px
+  @include tablet {
+    width: 95%;
+  }
+}
+
+footer {
+  background-color: $footer;
+}
+
+h1 {
+  color: $h1;
+  font-family: 'Galindo', sans-serif;
+}
+
+h2 {
+  color: $h2;
+  font-family: 'Joti One', sans-serif;
+  border-top: 20px solid $h2_bt;
+  padding-top: .5rem;
+}
+
+h3 {
+  color: $h3;
+}
+
+p {
+  color: $p;
+  font-family: 'Happy Monkey', sans-serif;
+}
+
+a {
+  color: $a;
+  text-decoration: none;
+  transition: $t-out;
+
+  &:hover {
+    color: $a-h;
+  }
+
+  i {
+    transition: $t-out;
+    &:hover {
+      color: $orange;
+    }
+  }
+}
+
+i {
+  color: $i;
+}
+
+.mt {
+  margin-top: .3rem; 
+ }
+
+ .hover-img {
+  border: 3px solid $transparent;
+  transition: $t-out;
+  &:hover {
+    border: 3px solid $white;
+    transform: scale(0.98);
+  }
+}
