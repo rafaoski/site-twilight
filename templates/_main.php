@@ -1,6 +1,9 @@
 <?php namespace ProcessWire;
 // Lang Options inside _init.php line: 22
-    $code = $lang_code ? $lang_code : 'en';?>
+    $code = $lang_code ? $lang_code : 'en';
+// TRASH DEMO DATA ( Uncomment below to move the demo content to the trash ) _func.php => line: 675   
+    // trashDemoData($trash = true);  
+?>
 <!DOCTYPE html>
 <html lang="<?=$code;?>" prefix="og: http://ogp.me/ns#">
 <head>

@@ -25,6 +25,7 @@
  * toAny() => ADD TO ANY ( SHARE BUTTONS https://www.addtoany.com/ ) =>  line: 605
  * gAnalitycs() => // https://developers.google.com/analytics/devguides/collection/analyticsjs/ => line: 622
  * customCSS() ADD CUSTOM CSS CODE => line: 638
+ * trashDemoData() TRASH DEMO DATA => line: 675
 */
 // LANGUAGE MENU $lang_code from _init.php => line: 44 ( default => en )
 function langMenu($lang_code) {
@@ -79,7 +80,6 @@ function langMenu($lang_code) {
     }
 
     $out .= "</li>\n";
-
     return $out;
         }  // END IF LANGUAGES TRUE
     }
@@ -671,3 +671,29 @@ margin:-100px 0 0 -100px; /* is width and height divided by two */
 }\n";
 
 }
+
+// TRASH DEMO DATA => USAGE: trashDemoData($trash = true);
+function trashDemoData($trash = false) {
+    // IF TRUE
+    if($trash == true) {
+        // GET ID ALL PAGES TO TRASH
+        $arr_p = [
+            '1389','1345','1361','1365','1355','1347','1351',
+            '1353','1357','1304','1106','1155','1124','1159',
+            '1165','1126','1169','1108','1128','1131','1171',
+            '1167','1116','1135','1149','1157','1163'
+        ];
+    
+            foreach ($arr_p as $key) {
+                $trash_p = pages()->get($key);
+            // IF PAGE EXSIST    
+                if($trash_p->name == true) {
+            // PAGE TO TRASH      
+                    pages()->trash($trash_p);
+                // OR DELETE
+                    // pages()->delete($trash_p);
+                }
+            }
+        }   
+    
+    }
