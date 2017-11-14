@@ -11,7 +11,7 @@
 
     <?php
         foreach (page()->images as $img) {
-           echo "<div class='col-3_md-6_col-sm-12'>
+           echo "<div class='col-3_md-6_sm-6'>
                     <a href='$img->url'>
                       <img class='img-body' $l_load='$img->url' alt=''>
                     </a>
