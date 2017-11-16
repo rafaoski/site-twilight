@@ -44,8 +44,8 @@ trashDemoData($trash = true);
 
 ### References:
 [Font Awesome](http://fontawesome.io/)  
-[gridlex](http://gridlex.devlint.fr/)  
+[Gridlex](http://gridlex.devlint.fr/)  
 [Headroom.js](http://wicky.nillia.ms/headroom.js/)  
-[metisMenu](https://github.com/onokumus/metismenu)  
-[vanilla-lazyload](https://github.com/verlok/lazyload)  
-[jquery](https://jquery.com/)  
+[MetisMenu](https://github.com/onokumus/metismenu)  
+[Vanilla-lazyload](https://github.com/verlok/lazyload)  
+[jQuery](https://jquery.com/)  
