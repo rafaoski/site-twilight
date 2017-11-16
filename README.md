@@ -1,14 +1,6 @@
-# Page Profile For [Processwire 3x](https://processwire.com/) with using functions like:
+# Site Profile For [Processwire 3x](https://processwire.com/) with using functions like:
 ### [MarkupRegions](https://processwire.com/blog/posts/processwire-3.0.49-introduces-a-new-template-file-strategy/)
 ### [FunctionsAPI](https://processwire.com/blog/posts/processwire-3.0.39-core-updates/)  
-
-### Added Packages:
-[Font Awesome](http://fontawesome.io/)  
-[gridlex](http://gridlex.devlint.fr/)  
-[Headroom.js](http://wicky.nillia.ms/headroom.js/)  
-[metisMenu](https://github.com/onokumus/metismenu)  
-[vanilla-lazyload](https://github.com/verlok/lazyload)  
-[jquery](https://jquery.com/)  
 
 ### Installed Modules:
 [TracyDebugger](http://modules.processwire.com/modules/tracy-debugger/)  
@@ -49,3 +41,11 @@ trashDemoData($trash = true);
 ##### And go to your home page and refresh it ... Your Demo Sites should be in the trash ...
 ##### Finally, remove or comment this feature back: 
 // trashDemoData($trash = true);
+
+### References:
+[Font Awesome](http://fontawesome.io/)  
+[gridlex](http://gridlex.devlint.fr/)  
+[Headroom.js](http://wicky.nillia.ms/headroom.js/)  
+[metisMenu](https://github.com/onokumus/metismenu)  
+[vanilla-lazyload](https://github.com/verlok/lazyload)  
+[jquery](https://jquery.com/)  
