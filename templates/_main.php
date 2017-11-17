@@ -143,7 +143,6 @@ if(!$dis_sid) : ?>
 echo pwDebug(); ?>
 
 <script defer src='<?=urls()->templates?>all-assets/js/master.min.js'></script>
-<!-- <script defer src='<?php // echo urls()->templates?>all-assets/js/jquery.cookiebar.js'></script> -->
 <pw-region id="bottom-region"></pw-region>
 
 <?php
